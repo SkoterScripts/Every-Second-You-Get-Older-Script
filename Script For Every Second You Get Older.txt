@@ -1,0 +1,58 @@
+local kavoUi = loadstring(game:HttpGet("https://pastebin.com/raw/vff1bQ9F"))()
+local window = kavoUi.CreateLib("Every Second You Get Older","Midnight")
+
+---Tabs
+ 
+local Tab1 = window:NewTab("Main")
+local Tab1Section = Tab1:NewSection("Free Roblox Scripts")
+local Tab2 = window:NewTab("Misc")
+local Tab2Section = Tab2:NewSection("Free Roblox Scripts")
+local Tab2Section = Tab2:NewSection("Made By biel17125")
+local Tab2Section = Tab2:NewSection("freerobloxscripts.com")
+local Tab3 = window:NewTab("Sup")
+local Tab3Section = Tab3:NewSection("Sup is word")
+local Tab1Section = Tab1:NewSection("Made By biel17125")
+local Tab1Section = Tab1:NewSection("freerobloxscripts.com")
+ 
+---Buttons
+
+Tab1Section:NewToggle("Auto TP to trophy", "tp pro trophy automatically", function(state)
+    if state then
+_G.autotp = true
+while _G.autotp == true do
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-372.969, 205.909, -21.4623)
+wait()
+end
+    else
+_G.autotp = false
+end
+end)
+
+Tab1Section:NewButton("TP to trophy","+6 Wins",function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-372.969, 205.909, -21.4623)
+end)
+
+Tab2Section:NewSlider("Walkspeed", "Changes how fast you walk.", 250, 16, function(s)
+        game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
+end)
+
+Tab2Section:NewSlider("JumpPower", "Changes how fast you jump.", 250, 16, function(s)
+        game.Players.LocalPlayer.Character.Humanoid.JumpPower = s
+    end)
+
+Tab2Section:NewButton("Infinite Yield", "Give you infinite yield script.", function()
+        loadstring(game:HttpGet(('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'),true))()
+    end)
+
+Tab2Section:NewToggle("Infinite Jump", "Lets you infinitely jump", function()
+        local InfiniteJumpEnabled = true
+        game:GetService("UserInputService").JumpRequest:connect(function()
+            if InfiniteJumpEnabled then
+                game:GetService"Players".LocalPlayer.Character:FindFirstChildOfClass'Humanoid':ChangeState("Jumping")
+            end
+        end)
+    end)
+
+Tab3Section:NewButton("Keyboard","Pc Like Keyboard",function()
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/manimcool21/Keyboard-FE/main/Protected%20(3).lua'),true))()
+end)
